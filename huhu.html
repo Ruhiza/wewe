@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        .rere{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <label for="pseudo"> Entrer</label> <input type="text" id="pseudo"> 
+    <button id="ere" onclick="addItem()">Add</button>
+
+    <ul id="we"> </ul>
+    
+    <script>
+            
+            function addItem(){
+                let valeur= $('#pseudo').val();
+                let wuru= $('<li></li>');
+                let giba= $('<span></span>');
+                giba.text(valeur).appendTo(wuru);
+                let butsup= $('<button></button>');
+                butsup.text('Delete');
+                wuru.append(butsup);
+                let te= $('#we');
+                te.append(wuru);
+                giba.on('click',ar);
+                
+                butsup.on('click',del);
+                function del(e){
+                    wuru.parentNode.removeChild(wuru);
+                }
+                
+            
+            };
+
+            function ar(e){
+                e.target.classList.toggle("rere");
+            }
+            
+
+
+    </script>
+</body>
+</html>
